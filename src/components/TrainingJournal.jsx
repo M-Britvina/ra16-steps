@@ -26,7 +26,7 @@ export class TrainingJournal extends React.Component {
         }
 
         const existingIndex = formData.id 
-            ? trainings.findIndex(t => t.id === t.id)
+            ? trainings.findIndex(t => t.id === formData.id)
             : trainings.findIndex(t => t.date === formData.date);
         
 
@@ -35,7 +35,7 @@ export class TrainingJournal extends React.Component {
             const newDistance = formData.id 
                 ? Number(formData.distance)
                 : Number(newTrainings[existingIndex].distance) + Number(formData.distance);
-            
+
             newTrainings[existingIndex] = {
                 ...newTrainings[existingIndex],
                 distance: newDistance.toFixed(1),

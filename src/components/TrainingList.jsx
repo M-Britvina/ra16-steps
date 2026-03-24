@@ -14,7 +14,7 @@ export function TrainingList({trainings, handleDelete, handleEdit}) {
                     <div className="empty-state">Нет данных о тренировках</div>
                 ) : 
                     trainings.map((training) => (
-                    <div key={training.id} className="table-row" data-date={training.sortingDate}>
+                    <div key={training.id} className="table-row" data-date={training.sortingDate} data-id={training.id}>
                         <div className="col-date">{training.date}</div>
                         <div className="col-distance">{training.distance}</div>
                         <div className="col-actions">
